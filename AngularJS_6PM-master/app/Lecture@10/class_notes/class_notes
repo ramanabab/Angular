@@ -1,0 +1,157 @@
+ng-if:
+
+
+Example_1
+
+    Visible the Password field , when ever enters the user name field
+
+------------------------------
+Lecture@10
+
+    ngIfDemo
+
+        Example_1
+
+               bower.json
+
+               .bowerrc.json
+
+               index.html
+-------------------------------
+
+<label>Uname.</label>
+<input type="text" ng-model="uname">
+
+<span ng-if="uname!=null && uname!=''">
+    <label>Pwd.</label>
+    <input type="password" ng-model="upwd">
+</span>
+
+
+
+Example_2.
+
+    Display the Middle Elements from an Following Array.
+
+    data = ["Hello_1","Hello_2","Hello_3","Hello_4","Hello_5"]
+
+
+
+Example_3.
+
+    Display the Form Errors By using ng-if condition.
+
+
+- when ever error raised in form automatically errors will store
+
+  into $error Object By Angular Framework.
+
+  <form name = "myForm">
+
+        <input type= "text"
+
+                name = "uname"
+
+                ng-minlength = "3"
+
+                ng-maxlength="6"
+
+                required >
+
+
+         <h5 ng-if="myForm.uname.$error.required>***Can't Left Blank***</h5>
+         <h5 ng-if="myForm.uname.$error.minlenth>***Minimum 3 characters are required***</h5>
+        <h5 ng-if="myForm.uname.$error.maxlength>***Maximum 6 Characters Are Allowed***</h5>
+
+</form>
+
+
+
+ng-options.
+
+    used to populate the data to the dropdown.
+
+    Syntax.
+
+        ng-options = "
+                       'Model Value' as
+                       'Dropdown Value' for
+                       'Iteration Variable' in
+                       'Collection'
+                     "
+ Ex.
+        $scope.data = ["Hello_1","Hello_2","Hello_3","Hello_4","Hello_5"];
+
+
+        ng-model = "my_model"
+
+        ng-options = "x as x for x in data"
+
+ Ex_1.
+
+       $scope.data = [{id:1,name:'Hello_1'},
+                      {id:2,name:'Hello_2'},
+                      {id:3,name:'Hello_3'},
+                      {id:4,name:'Hello_4'},
+                      {id:5,name:'Hello_5'}];
+
+       Use case 1.
+
+                Dropdown  --- Names
+
+                Model     ---  id's
+
+
+       ng-model="my_model"
+
+       ng-options="x.id as x.name for x in data"
+
+
+
+       Use case 2.
+
+                       Dropdown  --- Id's
+
+                       Model     ---  Names
+
+
+              ng-model="my_model"
+
+              ng-options="x.name as x.id for x in data"
+
+
+       Use case 3.
+
+                              Dropdown  --- Names
+
+                              Model     ---  Names
+
+
+                     ng-model="my_model"
+
+                     ng-options="x.name as x.name for x in data"
+
+        Use case 4.
+
+                                     Dropdown  --- Id's
+
+                                     Model     ---  Id's
+
+
+                            ng-model="my_model"
+
+                            ng-options="x.id as x.id for x in data"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
